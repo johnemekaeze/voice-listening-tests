@@ -160,8 +160,6 @@ def pill(state: str | None, done_label: str) -> str:
 def store_notice(active_store) -> None:
     if S.get("store_error"):
         st.warning(S.pop("store_error"))
-    if active_store.label == "local file":
-        st.caption("Test mode: no Google Sheet is configured, so answers go to a local CSV in data/.")
 
 
 def scroll_to_top() -> None:
