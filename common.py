@@ -1,5 +1,5 @@
-"""Pieces shared by the two listening tests: 1-5 ratings (streamlit_app.py) and pairwise
-Mansa-vs-other (pairwise_app.py). Same rounds, audio, languages, criteria and look."""
+"""Pieces shared by the two listening tests: pairwise Mansa-vs-other (streamlit_app.py, the one
+deployed) and 1-5 ratings (ratings_app.py). Same rounds, audio, languages, criteria and look."""
 from __future__ import annotations
 
 import hashlib

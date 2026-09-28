@@ -23,7 +23,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 
-# --- 1-5 ratings (streamlit_app.py) ---------------------------------------------------------
+# --- 1-5 ratings (ratings_app.py) -----------------------------------------------------------
 SCORE_COLUMNS = {
     "naturalness": "Naturalness (1–5)",
     "intelligibility": "Intelligibility (1–5)",
@@ -36,7 +36,7 @@ COLUMNS = ["saved_at", "listener_name", "listener_id", "language", "level", "rou
            *SCORE_COLUMNS.values(), NOTES, "skipped", "row_key"]
 RATINGS_SHEET = "RATINGS_SHEET_ID"
 
-# --- pairwise Mansa vs other (pairwise_app.py) ----------------------------------------------
+# --- pairwise Mansa vs other (streamlit_app.py) ----------------------------------------------
 # What the listener picked, as they saw it: "A", "B" or "Same".
 PAIR_CHOICE_COLUMNS = {
     "naturalness": "Naturalness: better voice",
