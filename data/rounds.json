@@ -1,0 +1,984 @@
+[
+ {
+  "id": "callcentre-f",
+  "gender": "female",
+  "group": "english",
+  "title": "Call-centre English",
+  "style": "Call-centre lines with fillers",
+  "text": "Thanks for calling Home Appliance Solutions. Um, how can I help you today? Can you uh repeat the, can you repeat your phone number? You're welcome, have a good one, bye now.",
+  "note": "Two of the voices start at “Um, how can I help you today?”. Judge the lines every voice says.",
+  "clips": [
+   {
+    "id": "7ae8447ec6",
+    "dur": 11.86,
+    "wave": "opnovk42rvqmrmrg11242vsaotukrkotimg10oupn9rmmmqsijrkpdlmsr92ome5"
+   },
+   {
+    "id": "5ef40939ce",
+    "dur": 9.29,
+    "wave": "243scmvmqkomgokgad00tq91qlllorqcqgksucnlqn2jpoompkooqeengb301ma0"
+   },
+   {
+    "id": "5c82d2f155",
+    "dur": 20.01,
+    "wave": "6irrsjmlkd444koc44ntnkl648vtpqomni444n647toja4epuibrkd44iqod4ln9"
+   },
+   {
+    "id": "3a25d0651c",
+    "dur": 10.31,
+    "wave": "gme3nhlimmngmehi7iqqnkokocgo4qvvrbpimhvolfbsnk8lb5qdgpong6osple5"
+   },
+   {
+    "id": "6d2fdad584",
+    "dur": 7.3,
+    "wave": "knklnkpdbgooanoopopihm9gbslopbp4lihhdegd8qvqmcle6olgljncge5ikjg5"
+   },
+   {
+    "id": "bc41758b5c",
+    "dur": 10.62,
+    "wave": "kbekllicgeac8a6422kkaqlicac75svpujfd0iappch9ejfa4000dnpfkfgedid8"
+   },
+   {
+    "id": "23cbd851c2",
+    "dur": 12.32,
+    "wave": "dmkmrpo5cksnnqii33jmgqpuqkjqn3fvud22pljnkoh8vunpkupinsmnimppfpoi"
+   },
+   {
+    "id": "6947bfb0f3",
+    "dur": 11.62,
+    "wave": "9m6fogc1lehlhbd993116mg6vsligadachdnjcfiegecedcc432gvvi7ihfadb92"
+   },
+   {
+    "id": "b74bc6492c",
+    "dur": 10.09,
+    "wave": "21reknolihnpgjhfa11mpgprqgbkknrm61ntmmshpsphniomh11dvrqpqponmli1"
+   }
+  ]
+ },
+ {
+  "id": "callcentre-m",
+  "gender": "male",
+  "group": "english",
+  "title": "Call-centre English",
+  "style": "Call-centre lines with fillers",
+  "text": "Thanks for calling Home Appliance Solutions. Um, how can I help you today? Can you uh repeat the, can you repeat your phone number? You're welcome, have a good one, bye now.",
+  "note": "Two of the voices start at “Um, how can I help you today?”. Judge the lines every voice says.",
+  "clips": [
+   {
+    "id": "2e60f778c3",
+    "dur": 10.35,
+    "wave": "tjptrtirqgkfi72cnn42vrstigilvmlhhpaga0000mvmlgkic1erniamijh6ajhc"
+   },
+   {
+    "id": "1c7430b0e0",
+    "dur": 11.23,
+    "wave": "5qjqlqnomfh2213igeehiacb6cfb22iimgjc222inkighf22ovf92iikf3gojth2"
+   },
+   {
+    "id": "595bd00eb1",
+    "dur": 13.71,
+    "wave": "hqltnnhmkhfda001hidrqoffl00ovrvkhnbja0lqklhokh1009opd206phji3ll8"
+   },
+   {
+    "id": "5d8991cbe2",
+    "dur": 6.05,
+    "wave": "ottolqahkkoafrspqobplaj3ppvr7r6jfkmmolm3nstvbnka8sdrcqeikd2iong2"
+   },
+   {
+    "id": "2f48d27c72",
+    "dur": 11.29,
+    "wave": "lgfpmfigjjikd9a1110anuprpma9k7110jlgnvncinimgjilpsh1252sphqkolk2"
+   },
+   {
+    "id": "54321191af",
+    "dur": 11.75,
+    "wave": "3l9ejnaalcleg842116vm9rjplfcg7gejsnvnebggkkbiopffnnot8rrjmgf5pk2"
+   },
+   {
+    "id": "033dcab3e4",
+    "dur": 13.14,
+    "wave": "jnhql7nlpkpnk41gorcaqk322plqloqq81qs93ptpo97ssopoqk3svnhqrudmpl4"
+   },
+   {
+    "id": "6c4216a2ae",
+    "dur": 7.86,
+    "wave": "2mk99vfonqnejbgh86spqdtmak748k8ponfk6lq7snkh6lsqo8d7mafhhga7rmke"
+   },
+   {
+    "id": "7564bc2342",
+    "dur": 9.62,
+    "wave": "rplqquqkrgvnnc42cspddqrvsoll8svul15snkt5thkvthqoqupkonk7oriemqi1"
+   }
+  ]
+ },
+ {
+  "id": "en-eastafrican-f",
+  "gender": "female",
+  "group": "english",
+  "title": "East African English",
+  "style": "English, East African accent",
+  "text": "Good morning! How are you doing today? The market is very busy this afternoon, so we should leave early. What time does the bus to the city leave on Saturday? Please call Ada at half past eight tomorrow to confirm the meeting in Lagos.",
+  "clips": [
+   {
+    "id": "ec570efd63",
+    "dur": 15.57,
+    "wave": "msvphqpleuc9oiijeelhj2gcdke64nklolebcglf22fkpqrlgpgb5kkbhfccjh93"
+   },
+   {
+    "id": "631b6cc012",
+    "dur": 17.0,
+    "wave": "2ntshmqrgh32uknrpkimekrnmmg2mlvlojoifoolhk3mmoohhnjlkqoimpmqol53"
+   },
+   {
+    "id": "7cf5a71c56",
+    "dur": 16.54,
+    "wave": "615ltma5vunjk50qrrqpmgfllgjpa4prsoumljmlhh4qqut50khmqhinlkljhjlf"
+   },
+   {
+    "id": "dc7e446099",
+    "dur": 15.08,
+    "wave": "dtvo6unnghgpibpgbjiejdhmh62opmgrhcegijc22ggrsrnpn9m6mpcimlgemmc4"
+   },
+   {
+    "id": "1bdb2a6c00",
+    "dur": 15.8,
+    "wave": "23pql8qtpofh2lsrmrofikijjnl9gc2lrvopiinmgjd2npuooikjiflkiqlojgj7"
+   },
+   {
+    "id": "9b725cb69d",
+    "dur": 20.16,
+    "wave": "kvvp911tlfda11fnekbddc53h71ddfh910jlnedbeff510ahmpkgdbgd7difchc4"
+   }
+  ]
+ },
+ {
+  "id": "en-eastafrican-m",
+  "gender": "male",
+  "group": "english",
+  "title": "East African English",
+  "style": "English, East African accent",
+  "text": "Good morning! How are you doing today? The market is very busy this afternoon, so we should leave early. What time does the bus to the city leave on Saturday? Please call Ada at half past eight tomorrow to confirm the meeting in Lagos.",
+  "clips": [
+   {
+    "id": "bd32471029",
+    "dur": 15.4,
+    "wave": "kvrcrsnl4qrqurrerf5pqtkpgptvrslnrt5loj32vjvc2opkqngtfuv7lqssqpe8"
+   },
+   {
+    "id": "f941d4ef4c",
+    "dur": 18.04,
+    "wave": "5f84mnc2vmjcb1hnjomifdkimfccb3fsqfqfjjgjd63uonqgpihjhgelihfif4i7"
+   },
+   {
+    "id": "9aa6a58a20",
+    "dur": 23.4,
+    "wave": "qscnpb5rnmkshk7oprrpljrkos1pi0fpriqnkjnopdhke4utvlolmhvjrqkni9ml"
+   }
+  ]
+ },
+ {
+  "id": "en-ghanaian-f",
+  "gender": "female",
+  "group": "english",
+  "title": "Ghanaian English",
+  "style": "English, Ghanaian accent",
+  "text": "Good morning! How are you doing today? The market is very busy this afternoon, so we should leave early. What time does the bus to the city leave on Saturday? Please call Ada at half past eight tomorrow to confirm the meeting in Lagos.",
+  "clips": [
+   {
+    "id": "cd1c0dba3a",
+    "dur": 13.82,
+    "wave": "olneqroogoflljkrfghhgcvikijjmlmjgigcfpdfcgaojofnjlkkfmsgjgckdcgc"
+   },
+   {
+    "id": "d1ef2c8e7c",
+    "dur": 16.32,
+    "wave": "rvvfrmmpojk7tmippnmddf6rtimjhhhpifoiekjdbbivvtsgmkpbmrqkqtrpnmb6"
+   },
+   {
+    "id": "fdce0b65dc",
+    "dur": 14.25,
+    "wave": "9hl8nugff61kphnhfka94eogkl90qnnkofafcfa71shoakvpslrnene0flrmgjqg"
+   }
+  ]
+ },
+ {
+  "id": "en-ghanaian-m",
+  "gender": "male",
+  "group": "english",
+  "title": "Ghanaian English",
+  "style": "English, Ghanaian accent",
+  "text": "Good morning! How are you doing today? The market is very busy this afternoon, so we should leave early. What time does the bus to the city leave on Saturday? Please call Ada at half past eight tomorrow to confirm the meeting in Lagos.",
+  "clips": [
+   {
+    "id": "4bfae9e519",
+    "dur": 13.96,
+    "wave": "5jrg2vhjl62jomfvlkfg7fijji4lqokrceegdhe22hjkt2tiqook4pq2komkgnf5"
+   },
+   {
+    "id": "2b2d801c48",
+    "dur": 15.38,
+    "wave": "mkjgisrqsgkamj6ergehdebshmhgdvjhjhqfhhgjjhbkpqg8cki5k6qnjkjndgia"
+   },
+   {
+    "id": "21a007b684",
+    "dur": 11.87,
+    "wave": "nnkevnmhoaokdnfedjlemnlgmgqml6mhihcdligihdnhoaprgnnjiloeihblghld"
+   }
+  ]
+ },
+ {
+  "id": "en-nigerian-f",
+  "gender": "female",
+  "group": "english",
+  "title": "Nigerian English",
+  "style": "English, Nigerian accent",
+  "text": "Good morning! How are you doing today? The market is very busy this afternoon, so we should leave early. What time does the bus to the city leave on Saturday? Please call Ada at half past eight tomorrow to confirm the meeting in Lagos.",
+  "clips": [
+   {
+    "id": "74325510c2",
+    "dur": 25.82,
+    "wave": "755sq95gvtpg55srvsi65mi9tuvt86mvrjlre55qlaeob5srnliod5cmqnnfa5sp"
+   },
+   {
+    "id": "11beb2675d",
+    "dur": 13.63,
+    "wave": "ptpgvpqllmpjkppnoqnpnnpprmrgpqonmlolmpnjfroookqhspdstkolsopqqoi7"
+   },
+   {
+    "id": "e71b293848",
+    "dur": 17.44,
+    "wave": "jquc14vtns81lskkummjmk3irnjkb22ssnollmlkmjb2hpnnkhmtjlolimoklmia"
+   },
+   {
+    "id": "c675182b3d",
+    "dur": 13.24,
+    "wave": "5prismkfh1mskfvmfiljrjorj2ssvpqnfellhmhg11ustvqjqqdugqqfksqlprte"
+   },
+   {
+    "id": "64d6e0c3f6",
+    "dur": 14.04,
+    "wave": "pth0vvqhe200vlpplhgjg2oklkmbilrnmhbadefeab1qhvpifqogfkf6llqlihb6"
+   },
+   {
+    "id": "6a58dce80c",
+    "dur": 21.12,
+    "wave": "dhe70rjjffg3dncmdbgc7mrefod1mkjficdffcahc6g6vpn4hlkebka9gpgecgk9"
+   },
+   {
+    "id": "e4d8516086",
+    "dur": 13.24,
+    "wave": "7lmf5cvllhlnodpoibjfenhine4bropmkcbjgh8i5antookkkf7lhhmihgjjfcea"
+   }
+  ]
+ },
+ {
+  "id": "en-nigerian-m",
+  "gender": "male",
+  "group": "english",
+  "title": "Nigerian English",
+  "style": "English, Nigerian accent",
+  "text": "Good morning! How are you doing today? The market is very busy this afternoon, so we should leave early. What time does the bus to the city leave on Saturday? Please call Ada at half past eight tomorrow to confirm the meeting in Lagos.",
+  "clips": [
+   {
+    "id": "99eced8ee6",
+    "dur": 14.3,
+    "wave": "ovn01dsnkdc0glemkkhfek9fglfh7lkolfncegiegc8iipkko9le9jffjjghefc6"
+   },
+   {
+    "id": "4d66d27226",
+    "dur": 15.06,
+    "wave": "34lomvnigjj3pqhljljqfgnghhpfpnnlnlidgkgkkc8ssqpqukqiincipiffhim9"
+   },
+   {
+    "id": "a357123cf8",
+    "dur": 12.3,
+    "wave": "ssqrvrqrdqommrppljkjnumnomllhihijkpi335nssrprqimnnjkiemokilhmii3"
+   },
+   {
+    "id": "b88e9874e5",
+    "dur": 19.46,
+    "wave": "8205vq91ssln91jurpvkjjgd6rmnp5rupsehjogml00oosslkjllbcuidpqljmia"
+   },
+   {
+    "id": "33e8eb9334",
+    "dur": 30.96,
+    "wave": "hn1gmr07sd0i8innviclfkbmkvkgknghgkf1jrhoefelc1802tsttrgl9ouhterd"
+   },
+   {
+    "id": "08c1f5a333",
+    "dur": 15.56,
+    "wave": "flinhgcb11mmclidfhe4dhbjj90prptpbdggk9a0chvvvnnqc9nd1erjfghe5002"
+   }
+  ]
+ },
+ {
+  "id": "hausa-mixed-f",
+  "gender": "female",
+  "group": "hausa",
+  "title": "Hausa mixed with English",
+  "style": "Code-switched: English words, numbers and times",
+  "text": "Sannu! Good morning, yaya kake? Please ka kira Ada by 8:30 AM gobe domin ka confirm the meeting da ke Lagos. The bus zai tashi at 6:45 ranar Asabar, kuma kusan 25 people daga office za su travel, so ka zo early, okay?",
+  "clips": [
+   {
+    "id": "6f33cb98fa",
+    "dur": 15.81,
+    "wave": "msvqprpmdnppvrromqmqqinnmgilro9buqrnldmknqlliilgqfomnokskmmppkla"
+   },
+   {
+    "id": "da0bdaef69",
+    "dur": 15.04,
+    "wave": "rrgqpojtifvnhrjqerjprjpinkepqjfgpjppngjoofmfnkiskdljhdoiodonijde"
+   },
+   {
+    "id": "93aa7cdd1a",
+    "dur": 20.46,
+    "wave": "ikilobqqf20pkvtrkqkmlfoonkjkfli1rrrjkdglqpje2solpcfmvgsql0rnrhpk"
+   }
+  ]
+ },
+ {
+  "id": "hausa-mixed-m",
+  "gender": "male",
+  "group": "hausa",
+  "title": "Hausa mixed with English",
+  "style": "Code-switched: English words, numbers and times",
+  "text": "Sannu! Good morning, yaya kake? Please ka kira Ada by 8:30 AM gobe domin ka confirm the meeting da ke Lagos. The bus zai tashi at 6:45 ranar Asabar, kuma kusan 25 people daga office za su travel, so ka zo early, okay?",
+  "clips": [
+   {
+    "id": "b81caa0f2f",
+    "dur": 20.16,
+    "wave": "hstv6mkkks5mno8iokmqoqbrnlstleqp5krolknkfnpno6knpsoo9mrrmvefptom"
+   },
+   {
+    "id": "ea27ea1365",
+    "dur": 16.21,
+    "wave": "5jl3aspuvq9qophordotvqsmqmsmgpq9hqe3ktl98tnqinmsroklipn7nhhqfj54"
+   },
+   {
+    "id": "cdd0c24dca",
+    "dur": 12.13,
+    "wave": "rrmtritmdkvlkqssgnomhoillkmgahqiiqjnphesojeqmlokkiofhnfqhlknpefd"
+   },
+   {
+    "id": "4bfc194aab",
+    "dur": 15.88,
+    "wave": "lq9ouute5njuurnphnjnepmisjljmqchvurkmoqsrhm9ktslrinqiqmh5vqroqv5"
+   }
+  ]
+ },
+ {
+  "id": "hausa-pure-f",
+  "gender": "female",
+  "group": "hausa",
+  "title": "Hausa",
+  "style": "Pure Hausa",
+  "text": "Sannu da safe! Yaya kake yau? Kasuwa tana cike da mutane yau da yamma, don haka ya kamata mu tafi da wuri. Karfe nawa ne bas ɗin da ke zuwa birni zai tashi ranar Asabar? Don Allah ka kira Ada da karfe takwas da rabi gobe domin tabbatar da taron da ke Legas.",
+  "clips": [
+   {
+    "id": "ce146660ee",
+    "dur": 15.79,
+    "wave": "ltjkrjs2mntnusvol6pnppkinbhournkppqfbc3otgjtrnpnmjmpptpcjmlkofi9"
+   },
+   {
+    "id": "a9b42f8344",
+    "dur": 16.95,
+    "wave": "qttruvppoutpqoonosrunkemj3rstoijookpjnojg0putttrllmoikijmkqjiof3"
+   },
+   {
+    "id": "eb0ba2cf08",
+    "dur": 20.56,
+    "wave": "jjnkfqhqgnnpkqqrqlhtuskfo90nqvunnktllpnvkm6oojporjmioikoknkqiln9"
+   },
+   {
+    "id": "5f51609ff4",
+    "dur": 19.74,
+    "wave": "vsrtusosrtrqqtlritnprmllpmsovlorotpntpjrlkositosnojlrhsnpplgqklm"
+   }
+  ]
+ },
+ {
+  "id": "hausa-pure-m",
+  "gender": "male",
+  "group": "hausa",
+  "title": "Hausa",
+  "style": "Pure Hausa",
+  "text": "Sannu da safe! Yaya kake yau? Kasuwa tana cike da mutane yau da yamma, don haka ya kamata mu tafi da wuri. Karfe nawa ne bas ɗin da ke zuwa birni zai tashi ranar Asabar? Don Allah ka kira Ada da karfe takwas da rabi gobe domin tabbatar da taron da ke Legas.",
+  "clips": [
+   {
+    "id": "639b6e272b",
+    "dur": 15.87,
+    "wave": "jrnmpjp4muoomoojbmmpmphihcrtvpqjtmpmii2ol4nuqptkoloonmh8mmomodhf"
+   },
+   {
+    "id": "bb49f8cff9",
+    "dur": 15.36,
+    "wave": "sqjptggrpqimljkkkqlntnkiinpvknrmgtnjpnerghorqootlgkinjepknemlfki"
+   },
+   {
+    "id": "3b3f296d2b",
+    "dur": 16.96,
+    "wave": "grpoavmq7lrrmmlqjcjlrkhelb5qtvqhlqjlloki50onrotuplksmnplnqiqkql7"
+   },
+   {
+    "id": "b39aa5e993",
+    "dur": 19.36,
+    "wave": "iqnuiiqojorkorqeoj3knnlhomgovsroqpvpnkjddmqiollirgkrjn6nnmorksrb"
+   },
+   {
+    "id": "6264a0ba0d",
+    "dur": 18.7,
+    "wave": "nqsgsoomrrospdrnurrdurqmmponfvoneomqqqruos8otirqpnkhqmglrnsoqa55"
+   }
+  ]
+ },
+ {
+  "id": "igbo-mixed-f",
+  "gender": "female",
+  "group": "igbo",
+  "title": "Igbo mixed with English",
+  "style": "Code-switched: English words, numbers and times",
+  "text": "Ụtụtụ ọma! Please kpọọ Ada by 8:30 AM echi ka o confirm the meeting dị na Lagos. The bus ga-apụ by 6:45 na Satọde, na ihe dịka 25 people si office ga-eje njem, so bịa early, okay?",
+  "clips": [
+   {
+    "id": "d32b79faae",
+    "dur": 12.38,
+    "wave": "llvriqopnnlglmnpikmirnrijgihdrmfmgifjijfkknkesjkjjejkjgfilfogeea"
+   },
+   {
+    "id": "144cdb4e7e",
+    "dur": 15.56,
+    "wave": "ilsk9srrqnopurnl5tsssoqsrifvqrrnjmomljt4svpjkttmnppk1vvpesvoonl2"
+   },
+   {
+    "id": "ae6ca9c256",
+    "dur": 13.29,
+    "wave": "hoqsn6vmurrrqktqkrpqoloooo82puntoqgmirinjokunoesifqkmopipqpnkmq6"
+   }
+  ]
+ },
+ {
+  "id": "igbo-mixed-m",
+  "gender": "male",
+  "group": "igbo",
+  "title": "Igbo mixed with English",
+  "style": "Code-switched: English words, numbers and times",
+  "text": "Ụtụtụ ọma! Please kpọọ Ada by 8:30 AM echi ka o confirm the meeting dị na Lagos. The bus ga-apụ by 6:45 na Satọde, na ihe dịka 25 people si office ga-eje njem, so bịa early, okay?",
+  "clips": [
+   {
+    "id": "df769c0988",
+    "dur": 10.27,
+    "wave": "iltnqunvpodiqiespkmiflommlcjnifqhffhgeajnpm8nnhkeh8nmlgdmoqnafj9"
+   },
+   {
+    "id": "aae5ead9c2",
+    "dur": 13.28,
+    "wave": "8bvqcjtspkn7jeieppomggejea1jtmvqmedeqekfg0llodrhbenegid74rqpejd4"
+   },
+   {
+    "id": "cb03c4a56e",
+    "dur": 16.47,
+    "wave": "flncgmmqtggqrojmd0qmspqmcpg0qrqjjfmfjl29mkulelonieqkf1tsqhpvpgsb"
+   }
+  ]
+ },
+ {
+  "id": "igbo-pure-f",
+  "gender": "female",
+  "group": "igbo",
+  "title": "Igbo",
+  "style": "Pure Igbo",
+  "text": "Ụtụtụ ọma! Kedu ka ị mere taa? Ahịa jupụtara na mmadụ nʼehihie taa, yabụ ka anyị pụọ ọsọ ọsọ. Kedu oge bọs na-aga obodo ga-apụ na Satọde? Biko kpọọ Ada nʼelekere asatọ na ọkara echi ka o kwado nzukọ dị na Legos.",
+  "clips": [
+   {
+    "id": "24edd76404",
+    "dur": 16.35,
+    "wave": "lvvpqpqkdqqjilpllgdroojmfdrnmokkkgjjhdeedmpoknesokkfgfgafiidcjhc"
+   },
+   {
+    "id": "f7cd846a9a",
+    "dur": 13.57,
+    "wave": "jonqk11112rrioonlooks26soopktnqcnrjopil6olovsqmqonmlqcroqdqmoo93"
+   },
+   {
+    "id": "f45437f979",
+    "dur": 15.36,
+    "wave": "goldjknjgnkekjkfnhic7njljqkffmuqnonmjjifcpvsqlkohjhqpfmpprgmjki7"
+   },
+   {
+    "id": "b7505b9b9a",
+    "dur": 18.4,
+    "wave": "kqsmpvpkpulsvqbvuoavtsopqn4uurrssqiopngpqsuiurpoeqqpngpqsmmrrqh0"
+   }
+  ]
+ },
+ {
+  "id": "igbo-pure-m",
+  "gender": "male",
+  "group": "igbo",
+  "title": "Igbo",
+  "style": "Pure Igbo",
+  "text": "Ụtụtụ ọma! Kedu ka ị mere taa? Ahịa jupụtara na mmadụ nʼehihie taa, yabụ ka anyị pụọ ọsọ ọsọ. Kedu oge bọs na-aga obodo ga-apụ na Satọde? Biko kpọọ Ada nʼelekere asatọ na ọkara echi ka o kwado nzukọ dị na Legos.",
+  "clips": [
+   {
+    "id": "a419cea729",
+    "dur": 19.47,
+    "wave": "gnk6ptpf2lvpp0ossjmcsqnlg1tugjssctslalilm51ro0qp3qrokionflrrpokd"
+   },
+   {
+    "id": "3fb276a201",
+    "dur": 13.12,
+    "wave": "hoqfpnmlbsqhmidknmkdsqoqmicnnkfhqppmfhhkanovrllnpiihiicknliekjd6"
+   },
+   {
+    "id": "79ac2ea1b9",
+    "dur": 13.59,
+    "wave": "jivplfjjpmp7mlnffen2lnphnnmjnjrkkfogfgj60imtolkqfhjijbrmkcljoi93"
+   },
+   {
+    "id": "df06bcc378",
+    "dur": 22.04,
+    "wave": "lsm1qomlpohm7lopfgm0qkphpkojlvqgksjkjeii9skvsonpfh0mppljoqlmkki9"
+   }
+  ]
+ },
+ {
+  "id": "yoruba-mixed-f",
+  "gender": "female",
+  "group": "yoruba",
+  "title": "Yoruba mixed with English",
+  "style": "Code-switched: English words, numbers and times",
+  "text": "Ẹ káàárọ̀! Please pe Àdá by 8:30 AM ọ̀la kí ó lè confirm the meeting tí ó wà ní Lagos. The bus yóò kúrò ní 6:45 ní ọjọ́ Àbámẹ́ta, ó sì fẹ́rẹ̀ẹ́ tó 25 people láti office tí wọn yóò travel, so wá ní kùtùkùtù, okay?",
+  "clips": [
+   {
+    "id": "10da46ead1",
+    "dur": 5.6,
+    "wave": "ln7luvtm8grmkjfvv7njplgnni2kohfnopgiok5l9loomoodkpi6erpojknodmd5"
+   },
+   {
+    "id": "0971eb3cda",
+    "dur": 14.85,
+    "wave": "dvvsltttqptsvptrprsprrqsh1mtpltnmitssrptqrsporkpqqnuunpevrnihtpl"
+   },
+   {
+    "id": "36efbf8743",
+    "dur": 19.4,
+    "wave": "2qstauktpormpmnlstlpmklvnsl1jssmtljomlsoi2ropnqfqholrnqbstifjqjf"
+   },
+   {
+    "id": "85d700c202",
+    "dur": 15.56,
+    "wave": "punkproptjffkjkjroevqpvoqosqtsknsrrtiustphqnsrqvhppuluqstqkimpmd"
+   }
+  ]
+ },
+ {
+  "id": "yoruba-mixed-m",
+  "gender": "male",
+  "group": "yoruba",
+  "title": "Yoruba mixed with English",
+  "style": "Code-switched: English words, numbers and times",
+  "text": "Ẹ káàárọ̀! Please pe Àdá by 8:30 AM ọ̀la kí ó lè confirm the meeting tí ó wà ní Lagos. The bus yóò kúrò ní 6:45 ní ọjọ́ Àbámẹ́ta, ó sì fẹ́rẹ̀ẹ́ tó 25 people láti office tí wọn yóò travel, so wá ní kùtùkùtù, okay?",
+  "clips": [
+   {
+    "id": "f429dac5f2",
+    "dur": 17.14,
+    "wave": "mvt3vofrolojlkulokgoplm81lrpqjkhpmqkh1ponjphd21errionrjsqh5eedli"
+   },
+   {
+    "id": "3ff8021028",
+    "dur": 11.42,
+    "wave": "nrpdrkpnkgnsviqmlpolholnikprcqtrilpsoj8mlolklgqifmcompkesichfema"
+   },
+   {
+    "id": "3859e7ffda",
+    "dur": 14.78,
+    "wave": "inpnllsolmltnnqomlpntroqgpnurvnnjmonnmi2nlqkomhpnpkqupocrihffqo8"
+   }
+  ]
+ },
+ {
+  "id": "yoruba-pure-f",
+  "gender": "female",
+  "group": "yoruba",
+  "title": "Yoruba",
+  "style": "Pure Yoruba",
+  "text": "Ẹ káàárọ̀! Báwo ni o ṣe wà lónìí? Ọjà kún fún ènìyàn ní ọ̀sán yìí, nítorí náà ẹ jẹ́ kí a lọ ní kùtùkùtù. Ìgbà wo ni ọkọ̀ tí ń lọ sí ìlú yóò kúrò ní ọjọ́ Àbámẹ́ta? Jọ̀wọ́ pe Àdá ní aago mẹ́jọ àbọ̀ ọ̀la kí ó lè fìdí ìpàdé tí ó wà ní Èkó múlẹ̀.",
+  "clips": [
+   {
+    "id": "cbb65140bf",
+    "dur": 14.07,
+    "wave": "ipvrtohnlaimbeffcaiheiif94535nkjcfdfedjd982gmqmkjihhef5cg8lef9c4"
+   },
+   {
+    "id": "116a3ba78c",
+    "dur": 25.06,
+    "wave": "2lvp1jvsrqbkmnqrlfnqqnnpqgh2jrrnlrimomonmi21tqnorogmigtqrjnunip5"
+   },
+   {
+    "id": "115a432314",
+    "dur": 17.22,
+    "wave": "loniqsprfomvosmofmuvpospoda2hpvrptrmssikqnnhkpsqqqrkplsbopntoqko"
+   },
+   {
+    "id": "382d326c2e",
+    "dur": 16.34,
+    "wave": "oqjmtpqqhpjrkpoi9svhqqtqfhmttmfnoqmntqolrniqslpospli8tplpfrspule"
+   },
+   {
+    "id": "16ee33ef13",
+    "dur": 16.19,
+    "wave": "ltpsvostkpooqpglfpujqoplghitpqjmsmkfntmmlkgvnnqhonoomlpkolfroemj"
+   }
+  ]
+ },
+ {
+  "id": "yoruba-pure-m",
+  "gender": "male",
+  "group": "yoruba",
+  "title": "Yoruba",
+  "style": "Pure Yoruba",
+  "text": "Ẹ káàárọ̀! Báwo ni o ṣe wà lónìí? Ọjà kún fún ènìyàn ní ọ̀sán yìí, nítorí náà ẹ jẹ́ kí a lọ ní kùtùkùtù. Ìgbà wo ni ọkọ̀ tí ń lọ sí ìlú yóò kúrò ní ọjọ́ Àbámẹ́ta? Jọ̀wọ́ pe Àdá ní aago mẹ́jọ àbọ̀ ọ̀la kí ó lè fìdí ìpàdé tí ó wà ní Èkó múlẹ̀.",
+  "clips": [
+   {
+    "id": "dc35004d1d",
+    "dur": 14.11,
+    "wave": "pvnklhqbji8mhoihflnplib979plpkkrensrjltnkg5uqprqstmsnttkjgtpogna"
+   },
+   {
+    "id": "b5460b6ab3",
+    "dur": 16.8,
+    "wave": "ltp5vpppoblpopnnm8htrnsqjgbeqsnnpllplqrolfdpoeqmmpong0usmniuqil4"
+   },
+   {
+    "id": "dc5bcb659d",
+    "dur": 12.58,
+    "wave": "mslnvqrqliskmmjkcjvtgpqoiggdrromrmkbrrpookaursqokmknonpnkjftnfng"
+   },
+   {
+    "id": "1be9033acc",
+    "dur": 15.78,
+    "wave": "fjhjhprl2dqgnrngqdillginkcf7gnjjfejkcmkkppdnhpjhhnoeigilnflhj9vm"
+   }
+  ]
+ },
+ {
+  "id": "twi-mixed-f",
+  "gender": "female",
+  "group": "twi",
+  "title": "Twi mixed with English",
+  "style": "Code-switched: English words, numbers and times",
+  "text": "Maakye! Please frɛ Ada by 8:30 AM ɔkyena na ɔmmɛ confirm the meeting a ɛwɔ Lagos. The bus bɛfi hɔ by 6:45 Memeneda, na ɛbɛyɛ 25 people a wɔfiri office bɛtu kwan, so bra ntɛm, okay?",
+  "clips": [
+   {
+    "id": "788734b2e6",
+    "dur": 23.53,
+    "wave": "rrlditqqqojvpokjppprlkfsspffusvqtmqtmrnfpvqsqljsvrmnifutsseemuid"
+   },
+   {
+    "id": "945bec22f5",
+    "dur": 14.69,
+    "wave": "2ejg2bmdonglnemied4jojhkkekkmg7jtlnghdmkga8mvhnhenfhfbe3lokid533"
+   },
+   {
+    "id": "00f19ac1e2",
+    "dur": 11.9,
+    "wave": "vnhuktrsmmsiijpkpmkjhmmmllrofioknnjcppodllsiqinjtfieef9fdpldgbcc"
+   }
+  ]
+ },
+ {
+  "id": "twi-mixed-m",
+  "gender": "male",
+  "group": "twi",
+  "title": "Twi mixed with English",
+  "style": "Code-switched: English words, numbers and times",
+  "text": "Maakye! Please frɛ Ada by 8:30 AM ɔkyena na ɔmmɛ confirm the meeting a ɛwɔ Lagos. The bus bɛfi hɔ by 6:45 Memeneda, na ɛbɛyɛ 25 people a wɔfiri office bɛtu kwan, so bra ntɛm, okay?",
+  "clips": [
+   {
+    "id": "4284643f16",
+    "dur": 18.48,
+    "wave": "ikg2nljlnlojrfg1rumkkkc1ssra1psko8oifsnnb1qlvmrjj7vkjjpce1mojche"
+   },
+   {
+    "id": "720256d978",
+    "dur": 10.85,
+    "wave": "nigvlsppcsfgppmqkipiijonkqtl8guonqkeqrnegvskmoptfmigemgl9hlgjae8"
+   }
+  ]
+ },
+ {
+  "id": "twi-pure-f",
+  "gender": "female",
+  "group": "twi",
+  "title": "Twi",
+  "style": "Pure Twi",
+  "text": "Maakye! Wo ho te sɛn ɛnnɛ? Dwaberem no ayɛ ma ɛnnɛ awia yi, enti ma yɛnkɔ ntɛm. Bɔ ben na bɔs a ɔrekɔ kurow no mu bɛfi hɔ Memeneda? Mesrɛ wo, frɛ Ada ɔkyena anɔpa ma ɔmmɛhyɛ nhyiam a ɛwɔ Lagos no mu den.",
+  "clips": [
+   {
+    "id": "2fa3364d0b",
+    "dur": 13.7,
+    "wave": "vlgqhrljutsvhqutoimunmlutpqojrnmoklijornihvhnneiplhmmnnkkgorighf"
+   },
+   {
+    "id": "e731736856",
+    "dur": 24.41,
+    "wave": "pqidnoroleorlpknopdrklurmjerpmtkopqkqnjepvkfdgqnljinulmnskgetegd"
+   },
+   {
+    "id": "ad4035b18e",
+    "dur": 15.88,
+    "wave": "fmkg2fijfc3lqmpphjibdjqnhc3jrrqsvdmnklge22dkoaktpjmhkjjhknlhjd3e"
+   }
+  ]
+ },
+ {
+  "id": "twi-pure-m",
+  "gender": "male",
+  "group": "twi",
+  "title": "Twi",
+  "style": "Pure Twi",
+  "text": "Maakye! Wo ho te sɛn ɛnnɛ? Dwaberem no ayɛ ma ɛnnɛ awia yi, enti ma yɛnkɔ ntɛm. Bɔ ben na bɔs a ɔrekɔ kurow no mu bɛfi hɔ Memeneda? Mesrɛ wo, frɛ Ada ɔkyena anɔpa ma ɔmmɛhyɛ nhyiam a ɛwɔ Lagos no mu den.",
+  "clips": [
+   {
+    "id": "877ea9d94c",
+    "dur": 20.56,
+    "wave": "lph1kjpk12pqsqqokc2nimoik32nssstrpokkrk11eo8jvmnlk2oqntptpgld834"
+   },
+   {
+    "id": "810ad979aa",
+    "dur": 12.61,
+    "wave": "kjfnljmbrohpkkolmigjslgeovlinpnjjqoifhrkflqinoflgcejpmiplgpsighc"
+   }
+  ]
+ },
+ {
+  "id": "ewe-mixed-f",
+  "gender": "female",
+  "group": "ewe",
+  "title": "Ewe mixed with English",
+  "style": "Code-switched: English words, numbers and times",
+  "text": "Ŋdi na wò! Please yɔ Ada by 8:30 AM etsɔ be wòa confirm the meeting si le Lagos. The bus adzo le 6:45 le Memleɖagbe, eye ame 25 tso office adzo, so va kaba, okay?",
+  "clips": [
+   {
+    "id": "e581bf0bcc",
+    "dur": 18.1,
+    "wave": "21mpvr72leogobiibjgd5ntvndgghddmgdhmhkiedbl4gjghmohfcmigkglmnig5"
+   },
+   {
+    "id": "87735d2250",
+    "dur": 11.33,
+    "wave": "mptvbqlpmllhgrbmqrvgllghpdlejle8hjbmkj9mlljfavnpgifdfiebllhfcdg9"
+   }
+  ]
+ },
+ {
+  "id": "ewe-mixed-m",
+  "gender": "male",
+  "group": "ewe",
+  "title": "Ewe mixed with English",
+  "style": "Code-switched: English words, numbers and times",
+  "text": "Ŋdi na wò! Please yɔ Ada by 8:30 AM etsɔ be wòa confirm the meeting si le Lagos. The bus adzo le 6:45 le Memleɖagbe, eye ame 25 tso office adzo, so va kaba, okay?",
+  "clips": [
+   {
+    "id": "ce308a8eaf",
+    "dur": 11.07,
+    "wave": "opvvesoqqpljpsdoptshioillmijjqg8lplprmhppolgtvqqnhngjrjemoooikoe"
+   },
+   {
+    "id": "722a5b13f2",
+    "dur": 15.79,
+    "wave": "4orr92fqqqmdoldn42151gqvnjoklicli212mqpmmhplmni3pohkpmpqg2jonjl6"
+   },
+   {
+    "id": "8563cee48d",
+    "dur": 13.52,
+    "wave": "lrsgfusurqn7nmnqtrlmrnifqtn844ktjqttc4psvrosvrvnsptml6ppulul57b6"
+   }
+  ]
+ },
+ {
+  "id": "ewe-pure-f",
+  "gender": "female",
+  "group": "ewe",
+  "title": "Ewe",
+  "style": "Pure Ewe",
+  "text": "Ŋdi na wò! Aleke nèfɔ egbea? Asime yɔ fũu egbe ɣetrɔ sia, eyata mina míadzo kaba. Ɣeyiɣi ka ʋu si yina dua me la adzo le Memleɖagbe? Meɖe kuku, yɔ Ada etsɔ ŋdi be wòaɖo takpekpe si le Lagos la dzi kpe.",
+  "clips": [
+   {
+    "id": "35db94acb1",
+    "dur": 15.23,
+    "wave": "nrulpsnllhjqpogonhekrromhgcqmmemoljfolghfcnldivofmqompiggelogjcd"
+   },
+   {
+    "id": "a52d73813d",
+    "dur": 25.67,
+    "wave": "gtvnjn1lkl5alemddfmnkopfkih3tfkqdlsmokjjf118rkgnqlnepkrhmjiljgi1"
+   }
+  ]
+ },
+ {
+  "id": "ewe-pure-m",
+  "gender": "male",
+  "group": "ewe",
+  "title": "Ewe",
+  "style": "Pure Ewe",
+  "text": "Ŋdi na wò! Aleke nèfɔ egbea? Asime yɔ fũu egbe ɣetrɔ sia, eyata mina míadzo kaba. Ɣeyiɣi ka ʋu si yina dua me la adzo le Memleɖagbe? Meɖe kuku, yɔ Ada etsɔ ŋdi be wòaɖo takpekpe si le Lagos la dzi kpe.",
+  "clips": [
+   {
+    "id": "a54a69c2bd",
+    "dur": 26.47,
+    "wave": "9nrfhqnjkf33rlqmjhth5qmmlf2orqpfpmjmle54jkk44ovi4jnrbpp7lmroah75"
+   },
+   {
+    "id": "f56e31d17b",
+    "dur": 15.3,
+    "wave": "pvusttpprppvmrqtlmpvvrvtpootttiqumrpvsttqlqqihutuoptqrmljjqumohi"
+   },
+   {
+    "id": "714b4633e1",
+    "dur": 17.45,
+    "wave": "qumqtpnsu7lsmmpvoqqtjprrqsiuskcoqttpustsmgvhsorrnosmnrjsqoigq898"
+   }
+  ]
+ },
+ {
+  "id": "swahili-mixed-f",
+  "gender": "female",
+  "group": "swahili",
+  "title": "Swahili mixed with English",
+  "style": "Code-switched: English words, numbers and times",
+  "text": "Habari za asubuhi! Please mpigie Ada by 8:30 AM kesho ili athibitishe the meeting iliyoko Lagos. The bus itaondoka by 6:45 siku ya Jumamosi, na takriban watu 25 kutoka office watasafiri, so njoo early, okay?",
+  "clips": [
+   {
+    "id": "2557e1d23b",
+    "dur": 14.82,
+    "wave": "ovojljkqmhnklgngigkhggedlnkljmelkckigdikjgahglcmcdecfbabkolmncde"
+   },
+   {
+    "id": "3ce7a71332",
+    "dur": 29.91,
+    "wave": "svqj100000000hipjfg700ggidfcii30ph000009mkfkdgf6000ilhhhkfdccijc"
+   },
+   {
+    "id": "af3748bf40",
+    "dur": 21.27,
+    "wave": "5ssgopkinklj0nunomoqgrpnqpp0rqnonl3vqpopplsonmjlptnokqqokl0qrjhi"
+   },
+   {
+    "id": "7c185e8e78",
+    "dur": 18.83,
+    "wave": "rvtloe22nomvrqhpojemekkgjlqg52pqonqdlshmlkd2lmtukgpjqfihjaghsnfe"
+   },
+   {
+    "id": "b1825248f8",
+    "dur": 15.72,
+    "wave": "jvpkjgnettrtjqnlmljhnigjhheblvjmqnigjhlhjjijikafj9lhjhgkafprpknc"
+   },
+   {
+    "id": "747f3ca371",
+    "dur": 23.57,
+    "wave": "lvsef700000000keorkfhg2hedjbecfjkgo3ekj9em7jgf8fijhegjhgec4egkfd"
+   }
+  ]
+ },
+ {
+  "id": "swahili-mixed-m",
+  "gender": "male",
+  "group": "swahili",
+  "title": "Swahili mixed with English",
+  "style": "Code-switched: English words, numbers and times",
+  "text": "Habari za asubuhi! Please mpigie Ada by 8:30 AM kesho ili athibitishe the meeting iliyoko Lagos. The bus itaondoka by 6:45 siku ya Jumamosi, na takriban watu 25 kutoka office watasafiri, so njoo early, okay?",
+  "clips": [
+   {
+    "id": "e979385754",
+    "dur": 16.18,
+    "wave": "askoff1meid2rplomme0rphsholkinopn97vplpsoirh7nqlp9nlrmgnloipng94"
+   },
+   {
+    "id": "6b63a21200",
+    "dur": 15.64,
+    "wave": "bvvmkfnekvromnnpimlkckiefjlf3bvflilgemflchl5doorjgjgljhfigltngo9"
+   },
+   {
+    "id": "101fdd2fed",
+    "dur": 12.93,
+    "wave": "qvpquhvppumrsirompmponftrtptlftlqrqpiquuflnsunmllonpmrmotufqtfof"
+   },
+   {
+    "id": "cf44969dd3",
+    "dur": 15.94,
+    "wave": "ntnorhsnlpofmpoortqpootqsnrvposolvqvmjlllkjnqehciikhnknomprsphn4"
+   }
+  ]
+ },
+ {
+  "id": "swahili-pure-f",
+  "gender": "female",
+  "group": "swahili",
+  "title": "Swahili",
+  "style": "Pure Swahili",
+  "text": "Habari za asubuhi! Umeamkaje leo? Sokoni kumejaa watu mchana huu, kwa hiyo tuondoke mapema. Basi linaloelekea mjini litaondoka saa ngapi siku ya Jumamosi? Tafadhali mpigie Ada simu saa mbili na nusu kesho ili athibitishe mkutano ulioko Lagos.",
+  "clips": [
+   {
+    "id": "7b52917eca",
+    "dur": 19.54,
+    "wave": "qtvmqbjqss8upovkno93sqnnn62rkrpljlmrjgonlb2ntlrnmqlnmjilhijnlpe5"
+   },
+   {
+    "id": "07711a44ab",
+    "dur": 23.28,
+    "wave": "mtpmonmq1pqqrmmmmqmmjbrvsoprkqonlkqlr3ptqpkppmlp5soqlovorppktupg"
+   },
+   {
+    "id": "bafb9def0b",
+    "dur": 19.3,
+    "wave": "svpkmoorpgpmsnjihpqnpfimliroojfmmjoneikbkrkgkjigkjggj9jgefajfhfc"
+   },
+   {
+    "id": "70f7a0f2e9",
+    "dur": 16.28,
+    "wave": "hmnllnnspkmmrvonnnnolopbrqroqsmnnmlfqpod3kvqlsmqpqpijoojoiqolmi7"
+   },
+   {
+    "id": "e7ed749b5d",
+    "dur": 20.31,
+    "wave": "ovrfmi9monm2fkerghgclhfgheb2pdifkdfhm8edh84ipljlamdfaegg9ciddfa3"
+   },
+   {
+    "id": "5ca8b39343",
+    "dur": 19.91,
+    "wave": "ovqpngnnlq3ehdoeegbggdeda0jbfeg9bfgfg9eed9dhj9gibgcebeaf9c9gee94"
+   }
+  ]
+ },
+ {
+  "id": "swahili-pure-m",
+  "gender": "male",
+  "group": "swahili",
+  "title": "Swahili",
+  "style": "Pure Swahili",
+  "text": "Habari za asubuhi! Umeamkaje leo? Sokoni kumejaa watu mchana huu, kwa hiyo tuondoke mapema. Basi linaloelekea mjini litaondoka saa ngapi siku ya Jumamosi? Tafadhali mpigie Ada simu saa mbili na nusu kesho ili athibitishe mkutano ulioko Lagos.",
+  "clips": [
+   {
+    "id": "c224d5173f",
+    "dur": 16.39,
+    "wave": "blkga0jovvgqlttmolrlmhm60tmpmolgnnmoinll50mvmqrkmnhkinmmhhpkjkda"
+   },
+   {
+    "id": "bc4a51654c",
+    "dur": 15.68,
+    "wave": "rrkrlurrtfprroosplupoqrnrvrtvqqsmspmptrepurtmoqouunqmilpooopppri"
+   },
+   {
+    "id": "d606e921c6",
+    "dur": 21.06,
+    "wave": "5lvnpeknjfknntlij8sjnhg1uopmjcqsppmjvhgjtcjsl5qqmlli0qnhpgninmkd"
+   },
+   {
+    "id": "ae6a094f80",
+    "dur": 16.83,
+    "wave": "ntkqcponnfpptqnqpgvoopq2lnnopomimbjjknhknmnlilpljphkjljkjnmmmoj2"
+   }
+  ]
+ }
+]

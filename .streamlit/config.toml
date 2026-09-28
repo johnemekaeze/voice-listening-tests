@@ -1,0 +1,16 @@
+[theme]
+# Same warm paper + ink as the side-by-side CosyVoice evaluation app (all-lab-stream-tts).
+# Deliberately not red: no colour may draw attention to one voice.
+base = "light"
+primaryColor = "#1a4a72"
+backgroundColor = "#f2eee6"
+secondaryBackgroundColor = "#fffdf8"
+textColor = "#1b1914"
+font = "sans serif"
+
+[client]
+toolbarMode = "minimal"
+showSidebarNavigation = false
+
+[browser]
+gatherUsageStats = false
