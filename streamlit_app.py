@@ -227,8 +227,10 @@ def view_intro() -> None:
     c1, c2 = st.columns([1.4, 3], vertical_alignment="center")
     c1.button("Continue listening" if returning else "Start listening", type="primary", on_click=start,
               width="stretch")
-    c2.caption(f"{n} pairs, about {max(3, round(n * 0.75))} minutes for all of them. Answers save after every "
-               "pair, so do as many as you can and stop any time." if n else "Choose at least one language.")
+    c2.caption("Choose at least one language." if not chosen
+               else "No pairs are set up for these languages yet." if not n
+               else f"{n} pairs, about {max(3, round(n * 0.75))} minutes for all of them. Answers save after every "
+                    "pair, so do as many as you can and stop any time.")
     C.store_notice(get_store())
 
 
