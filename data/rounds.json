@@ -6,52 +6,61 @@
   "title": "Call-centre English",
   "style": "Call-centre lines with fillers",
   "text": "Thanks for calling Home Appliance Solutions. Um, how can I help you today? Can you uh repeat the, can you repeat your phone number? You're welcome, have a good one, bye now.",
-  "note": "Two of the voices start at “Um, how can I help you today?”. Judge the lines every voice says.",
+  "note": "Some voices start at “Um, how can I help you today?”. Judge only the lines every voice says.",
   "clips": [
    {
     "id": "7ae8447ec6",
     "dur": 11.86,
-    "wave": "opnovk42rvqmrmrg11242vsaotukrkotimg10oupn9rmmmqsijrkpdlmsr92ome5"
+    "wave": "opnovk42rvqmrmrg11242vsaotukrkotimg10oupn9rmmmqsijrkpdlmsr92ome5",
+    "accent": "nigerian"
    },
    {
     "id": "5ef40939ce",
     "dur": 9.29,
-    "wave": "243scmvmqkomgokgad00tq91qlllorqcqgksucnlqn2jpoompkooqeengb301ma0"
+    "wave": "243scmvmqkomgokgad00tq91qlllorqcqgksucnlqn2jpoompkooqeengb301ma0",
+    "accent": "american"
    },
    {
     "id": "5c82d2f155",
     "dur": 20.01,
-    "wave": "6irrsjmlkd444koc44ntnkl648vtpqomni444n647toja4epuibrkd44iqod4ln9"
+    "wave": "6irrsjmlkd444koc44ntnkl648vtpqomni444n647toja4epuibrkd44iqod4ln9",
+    "accent": "nigerian"
    },
    {
     "id": "3a25d0651c",
     "dur": 10.31,
-    "wave": "gme3nhlimmngmehi7iqqnkokocgo4qvvrbpimhvolfbsnk8lb5qdgpong6osple5"
+    "wave": "gme3nhlimmngmehi7iqqnkokocgo4qvvrbpimhvolfbsnk8lb5qdgpong6osple5",
+    "accent": "ghanaian"
    },
    {
     "id": "6d2fdad584",
     "dur": 7.3,
-    "wave": "knklnkpdbgooanoopopihm9gbslopbp4lihhdegd8qvqmcle6olgljncge5ikjg5"
+    "wave": "knklnkpdbgooanoopopihm9gbslopbp4lihhdegd8qvqmcle6olgljncge5ikjg5",
+    "accent": "ghanaian"
    },
    {
     "id": "bc41758b5c",
     "dur": 10.62,
-    "wave": "kbekllicgeac8a6422kkaqlicac75svpujfd0iappch9ejfa4000dnpfkfgedid8"
+    "wave": "kbekllicgeac8a6422kkaqlicac75svpujfd0iappch9ejfa4000dnpfkfgedid8",
+    "accent": "nigerian"
    },
    {
     "id": "23cbd851c2",
     "dur": 12.32,
-    "wave": "dmkmrpo5cksnnqii33jmgqpuqkjqn3fvud22pljnkoh8vunpkupinsmnimppfpoi"
+    "wave": "dmkmrpo5cksnnqii33jmgqpuqkjqn3fvud22pljnkoh8vunpkupinsmnimppfpoi",
+    "accent": "east_african"
    },
    {
     "id": "6947bfb0f3",
     "dur": 11.62,
-    "wave": "9m6fogc1lehlhbd993116mg6vsligadachdnjcfiegecedcc432gvvi7ihfadb92"
+    "wave": "9m6fogc1lehlhbd993116mg6vsligadachdnjcfiegecedcc432gvvi7ihfadb92",
+    "accent": "ghanaian"
    },
    {
     "id": "b74bc6492c",
     "dur": 10.09,
-    "wave": "21reknolihnpgjhfa11mpgprqgbkknrm61ntmmshpsphniomh11dvrqpqponmli1"
+    "wave": "21reknolihnpgjhfa11mpgprqgbkknrm61ntmmshpsphniomh11dvrqpqponmli1",
+    "accent": "nigerian"
    }
   ]
  },
@@ -62,52 +71,61 @@
   "title": "Call-centre English",
   "style": "Call-centre lines with fillers",
   "text": "Thanks for calling Home Appliance Solutions. Um, how can I help you today? Can you uh repeat the, can you repeat your phone number? You're welcome, have a good one, bye now.",
-  "note": "Two of the voices start at “Um, how can I help you today?”. Judge the lines every voice says.",
+  "note": "Some voices start at “Um, how can I help you today?”. Judge only the lines every voice says.",
   "clips": [
    {
     "id": "2e60f778c3",
     "dur": 10.35,
-    "wave": "tjptrtirqgkfi72cnn42vrstigilvmlhhpaga0000mvmlgkic1erniamijh6ajhc"
+    "wave": "tjptrtirqgkfi72cnn42vrstigilvmlhhpaga0000mvmlgkic1erniamijh6ajhc",
+    "accent": "nigerian"
    },
    {
     "id": "1c7430b0e0",
     "dur": 11.23,
-    "wave": "5qjqlqnomfh2213igeehiacb6cfb22iimgjc222inkighf22ovf92iikf3gojth2"
+    "wave": "5qjqlqnomfh2213igeehiacb6cfb22iimgjc222inkighf22ovf92iikf3gojth2",
+    "accent": "nigerian"
    },
    {
     "id": "595bd00eb1",
     "dur": 13.71,
-    "wave": "hqltnnhmkhfda001hidrqoffl00ovrvkhnbja0lqklhokh1009opd206phji3ll8"
+    "wave": "hqltnnhmkhfda001hidrqoffl00ovrvkhnbja0lqklhokh1009opd206phji3ll8",
+    "accent": "nigerian"
    },
    {
     "id": "5d8991cbe2",
     "dur": 6.05,
-    "wave": "ottolqahkkoafrspqobplaj3ppvr7r6jfkmmolm3nstvbnka8sdrcqeikd2iong2"
+    "wave": "ottolqahkkoafrspqobplaj3ppvr7r6jfkmmolm3nstvbnka8sdrcqeikd2iong2",
+    "accent": "ghanaian"
    },
    {
     "id": "2f48d27c72",
     "dur": 11.29,
-    "wave": "lgfpmfigjjikd9a1110anuprpma9k7110jlgnvncinimgjilpsh1252sphqkolk2"
+    "wave": "lgfpmfigjjikd9a1110anuprpma9k7110jlgnvncinimgjilpsh1252sphqkolk2",
+    "accent": "nigerian"
    },
    {
     "id": "54321191af",
     "dur": 11.75,
-    "wave": "3l9ejnaalcleg842116vm9rjplfcg7gejsnvnebggkkbiopffnnot8rrjmgf5pk2"
+    "wave": "3l9ejnaalcleg842116vm9rjplfcg7gejsnvnebggkkbiopffnnot8rrjmgf5pk2",
+    "accent": "ghanaian"
    },
    {
     "id": "033dcab3e4",
     "dur": 13.14,
-    "wave": "jnhql7nlpkpnk41gorcaqk322plqloqq81qs93ptpo97ssopoqk3svnhqrudmpl4"
+    "wave": "jnhql7nlpkpnk41gorcaqk322plqloqq81qs93ptpo97ssopoqk3svnhqrudmpl4",
+    "accent": "east_african"
    },
    {
     "id": "6c4216a2ae",
     "dur": 7.86,
-    "wave": "2mk99vfonqnejbgh86spqdtmak748k8ponfk6lq7snkh6lsqo8d7mafhhga7rmke"
+    "wave": "2mk99vfonqnejbgh86spqdtmak748k8ponfk6lq7snkh6lsqo8d7mafhhga7rmke",
+    "accent": "ghanaian"
    },
    {
     "id": "7564bc2342",
     "dur": 9.62,
-    "wave": "rplqquqkrgvnnc42cspddqrvsoll8svul15snkt5thkvthqoqupkonk7oriemqi1"
+    "wave": "rplqquqkrgvnnc42cspddqrvsoll8svul15snkt5thkvthqoqupkonk7oriemqi1",
+    "accent": "american"
    }
   ]
  },

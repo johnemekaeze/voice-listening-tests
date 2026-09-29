@@ -27,6 +27,7 @@ GROUPS = [
     ("swahili", "Swahili", ""),
 ]
 GROUP_NAME = {g: name for g, name, _ in GROUPS}
+ACCENT_NAME = {"nigerian": "Nigerian", "ghanaian": "Ghanaian", "east_african": "East African", "american": "American"}
 LEVELS = {"skip": "Skip", "fluent": "I speak it", "native": "Native"}
 CRITERIA = [
     ("naturalness", "Naturalness",

@@ -1,7 +1,7 @@
 """Voice Pairs: Mansa against each other system, two voices at a time.
 
 Each trial is one script read by a Mansa voice and by one other system's voice from the same
-round (same language, variant and voice gender). Listeners hear Voice A and Voice B and pick the
+round (same language, variant and voice gender) and, in call-centre English, the same accent. Listeners hear Voice A and Voice B and pick the
 better one on naturalness, intelligibility, pronunciation and overall, then say why.
 
 Blindness: pairs are built here on the server from the private clip key, so the browser only
@@ -63,17 +63,23 @@ def clip_key() -> dict:
 
 @st.cache_data(ttl=900, show_spinner=False)
 def all_pairs() -> dict:
-    """Every Mansa clip against every other system's clip in the same round."""
+    """Every Mansa clip against every other system's clip in the same round and accent. Only the
+    call-centre round mixes accents, so its clips carry one; Nigerian meets Nigerian, and so on."""
     key, pairs = clip_key(), {}
     for r in C.ROUNDS:
-        ids = [c["id"] for c in r["clips"] if c["id"] in key]
-        mansa = [c for c in ids if key[c]["system"] == MANSA]
+        accent = {c["id"]: c.get("accent") for c in r["clips"] if c["id"] in key}
+        mansa = [c for c in accent if key[c]["system"] == MANSA]
         for m in mansa:
-            for o in ids:
-                if key[o]["system"] != MANSA:
+            for o in accent:
+                if key[o]["system"] != MANSA and accent[o] == accent[m]:
                     pid = f"{m}~{o}"
-                    pairs[pid] = {"id": pid, "round": r["id"], "mansa": m, "other": o}
+                    pairs[pid] = {"id": pid, "round": r["id"], "mansa": m, "other": o, "accent": accent[m]}
     return pairs
+
+
+def pair_title(p: dict) -> str:
+    title = C.BY_ID[p["round"]]["title"]
+    return f"{title}, {C.ACCENT_NAME[p['accent']]} accent" if p.get("accent") else title
 
 
 def sides(p: dict) -> tuple[str, str]:
@@ -202,7 +208,7 @@ def submit(pid: str, skip: bool) -> None:
         "saved_at": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC"),
         "listener_name": S.name, "listener_id": S.lid,
         "language": C.GROUP_NAME[r["group"]], "level": C.LEVELS[S.langs.get(r["group"], "fluent")],
-        "round_id": p["round"], "round": r["title"], "voice_gender": r["gender"],
+        "round_id": p["round"], "round": pair_title(p), "voice_gender": r["gender"],
         "pair_id": pid, "voice_a_clip": a, "voice_b_clip": b, "mansa_is": mansa_side,
         "competitor": key[p["other"]]["system"], "competitor_voice": key[p["other"]]["voice"],
         "mansa_voice": key[p["mansa"]]["voice"],
@@ -339,7 +345,7 @@ def view_pair() -> None:
     a, b = sides(p)
     gender = "Female" if r["gender"] == "female" else "Male"
     note = f'<em>{esc(r["note"])}</em>' if r.get("note") else ""
-    md(f'<div class="vp-crumb">{esc(r["title"])} · {gender} voices</div>'
+    md(f'<div class="vp-crumb">{esc(pair_title(p))} · {gender} voices</div>'
        '<h2 class="vp-h2">Which voice sounds more like home?</h2>'
        f'<div class="vp-script"><small>BOTH VOICES READ</small><p lang="{LANG_TAG[r["group"]]}">{esc(r["text"])}</p>{note}</div>')
 
@@ -393,10 +399,11 @@ def view_list() -> None:
             continue
         md(f'<div class="vp-section">{esc(C.GROUP_NAME[g])} · {"native" if S.langs.get(g) == "native" else "speaker"}</div>')
         for n, pid in enumerate(ids, 1):
-            r = C.BY_ID[all_pairs()[pid]["round"]]
+            p = all_pairs()[pid]
+            r = C.BY_ID[p["round"]]
             state = S.status.get(pid)
             c1, c2, c3 = st.columns([4, 1.2, 1.2], vertical_alignment="center")
-            c1.markdown(f'<div class="vp-row">Pair {n} · {esc(r["title"])}<small>'
+            c1.markdown(f'<div class="vp-row">Pair {n} · {esc(pair_title(p))}<small>'
                         f'{"Female" if r["gender"] == "female" else "Male"} voices</small></div>',
                         unsafe_allow_html=True)
             c2.markdown(C.pill(state, "Answered"), unsafe_allow_html=True)
