@@ -1,4 +1,4 @@
-"""Pairwise listening test: Mansa against each other system, two voices at a time.
+"""Voice Pairs: Mansa against each other system, two voices at a time.
 
 Each trial is one script read by a Mansa voice and by one other system's voice from the same
 round (same language, variant and voice gender). Listeners hear Voice A and Voice B and pick the
@@ -14,6 +14,7 @@ early.
 """
 from __future__ import annotations
 
+import html
 from collections import Counter
 from datetime import datetime, timezone
 
@@ -24,7 +25,7 @@ import store
 
 MANSA = "Mansa"
 TITLE = "Voice Pairs"
-CHOICES = ["A", "B", "Same"]
+CHOICES = ["A", "Same", "B"]
 CHOICE_LABEL = {"A": "Voice A", "B": "Voice B", "Same": "About the same"}
 QUESTIONS = [
     ("naturalness", "Which sounds more natural?", "More like a real person talking."),
@@ -34,7 +35,19 @@ QUESTIONS = [
     ("overall", "Overall, which is better?", "The one you would rather use."),
 ]
 MIN_REASON = 8
+GROUP_IDS = [g for g, _, _ in C.GROUPS]
+LANG_TAG = {"english": "en", "hausa": "ha", "igbo": "ig", "yoruba": "yo", "twi": "ak", "ewe": "ee", "swahili": "sw"}
 S = C.S
+esc = html.escape
+
+LOGO = '<span class="vp-logo" aria-hidden="true"><i></i><i></i></span>'
+BRAND = f'<a class="vp-brand" href="#top">{LOGO}<b>Voice Pairs</b></a>'
+KENTE = '<div class="vp-kente" aria-hidden="true"></div>'
+FOOTER = ('<div class="vp-footer"><span>A listening panel by the African Languages Lab</span>'
+          '<span>We keep only your name and your answers.</span></div>')
+CHECK = ('<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" '
+         'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle>'
+         '<path d="M8 12l3 3 5-6"></path></svg>')
 
 
 # --------------------------------------------------------------------------- data
@@ -69,6 +82,10 @@ def sides(p: dict) -> tuple[str, str]:
     return (p["mansa"], p["other"]) if mansa_first else (p["other"], p["mansa"])
 
 
+def group_of(pid: str) -> str:
+    return C.BY_ID[all_pairs()[pid]["round"]]["group"]
+
+
 def pairs_in(group: str) -> int:
     return sum(1 for p in all_pairs().values() if C.BY_ID[p["round"]]["group"] == group)
 
@@ -77,7 +94,7 @@ def init_state() -> None:
     S.setdefault("view", "intro")
     S.setdefault("name", "")
     S.setdefault("lid", "")
-    S.setdefault("langs", {"english": "fluent"})
+    S.setdefault("langs", {})
     S.setdefault("status", {})   # pair id -> "rated" | "skipped"
     S.setdefault("saved", {})    # pair id -> {criterion: "A"|"B"|"Same", "note": text}
     S.setdefault("queue", [])
@@ -105,6 +122,14 @@ def go(view: str, pid: str | None = None) -> None:
     S.scroll += 1
 
 
+def jump(group: str) -> None:
+    """Switch language: the next unanswered pair in it, else its first pair."""
+    ids = [pid for pid in S.queue if group_of(pid) == group]
+    nxt = next((pid for pid in ids if pid not in S.status), ids[0] if ids else None)
+    if nxt:
+        go("pair", nxt)
+
+
 def build_queue(counts: Counter) -> None:
     """Least-judged pairs first (random among equals), then spread so rounds don't repeat back to back."""
     cand = [p for p in all_pairs().values() if C.BY_ID[p["round"]]["group"] in S.langs]
@@ -120,12 +145,14 @@ def build_queue(counts: Counter) -> None:
 # --------------------------------------------------------------------------- actions
 def start() -> None:
     name = C.clean_name(S.get("name_input", ""))
-    langs = C.chosen_levels()
+    picked = [g for g in GROUP_IDS if g in (S.get("langs_pick") or [])]
+    native = set(S.get("native_pick") or [])
+    langs = {g: ("native" if g in native else "fluent") for g in picked}
     if not name:
         S.intro_error = "Type your name so we can tell listeners apart."
         return
     if not langs:
-        S.intro_error = "Choose at least one language you can judge."
+        S.intro_error = "Choose at least one language you speak."
         return
     if not all_pairs():
         S.intro_error = "The test isn't set up yet (no answer key), so there are no pairs to play. Tell the organiser."
@@ -151,7 +178,10 @@ def start() -> None:
     S.name, S.lid, S.langs = name, lid, langs
     build_queue(counts)
     nxt = next_open()
-    go("pair", nxt) if nxt else go("done")
+    if nxt:
+        go("pair", nxt)
+    else:
+        go("done")
 
 
 def submit(pid: str, skip: bool) -> None:
@@ -198,51 +228,127 @@ def submit(pid: str, skip: bool) -> None:
     S.status[pid] = "skipped" if skip else "rated"
     S.saved[pid] = saved
     nxt = next_open(pid)
-    go("pair", nxt) if nxt else go("done")
+    if nxt:
+        go("pair", nxt)
+    else:
+        go("done")
+
+
+# --------------------------------------------------------------------------- pieces
+def md(markup: str) -> None:
+    st.markdown(markup, unsafe_allow_html=True)
+
+
+def illustration(mini: bool = False) -> str:
+    heights = (12, 26, 40, 20, 32) if mini else (18, 40, 64, 32, 52, 22)
+    bars = "".join(f'<i style="height:{h}px"></i>' for h in heights)
+    return (f'<div class="vp-illus{" vp-mini" if mini else ""}" aria-hidden="true">'
+            f'<div class="ab">A</div><div class="bars">{bars}</div><div class="ab">B</div></div>')
+
+
+def initials(name: str) -> str:
+    parts = [p for p in name.split() if p]
+    return "".join(p[0] for p in parts[:2]).upper() or "?"
+
+
+def me_html() -> str:
+    return f'<div class="vp-me"><span class="av">{esc(initials(S.name))}</span><span class="nm">{esc(S.name)}</span></div>'
+
+
+def app_header(pid: str | None = None) -> None:
+    """Brand, language switcher with progress, then Your pairs and the listener."""
+    with st.container(key="topbar"):
+        c1, c2, c3 = st.columns([1.1, 2.4, 1.5], vertical_alignment="center")
+    with c1.container(key="tb_brand"):
+        md(BRAND)
+    with c2.container(key="tb_nav"):
+        if pid:
+            g = group_of(pid)
+            ids = [x for x in S.queue if group_of(x) == g]
+            answered = sum(1 for x in ids if x in S.status)
+            s1, s2 = st.columns([1, 2.2], vertical_alignment="center")
+            with s1.popover(C.GROUP_NAME[g]):
+                md('<div class="vp-section" style="margin:0 0 .5rem">Your languages</div>')
+                for lg in GROUP_IDS:
+                    if lg not in S.langs:
+                        continue
+                    lids = [x for x in S.queue if group_of(x) == lg]
+                    done = sum(1 for x in lids if x in S.status)
+                    st.button(f"{C.GROUP_NAME[lg]} · {done} of {len(lids)} answered", key=f"sw_{lg}",
+                              on_click=jump, args=(lg,), width="stretch",
+                              icon=":material/check:" if lg == g else None)
+                st.button("Add or change languages", key="sw_change", on_click=go, args=("intro",), width="stretch")
+            pct = round(100 * answered / len(ids)) if ids else 0
+            s2.markdown(f'<div class="vp-progress"><span>Pair {ids.index(pid) + 1} of {len(ids)}</span>'
+                        f'<span class="track"><i style="width:{pct}%"></i></span></div>', unsafe_allow_html=True)
+    with c3.container(key="tb_me"):
+        b1, b2 = st.columns([1, 1.3], vertical_alignment="center")
+        if S.view == "list":
+            nxt = S.current if S.current in S.queue else next_open()
+            b1.button("Back to listening", on_click=go, args=("pair", nxt), width="stretch", disabled=not nxt)
+        else:
+            b1.button("Your pairs", on_click=go, args=("list",), width="stretch")
+        b2.markdown(me_html(), unsafe_allow_html=True)
+    md(KENTE)
 
 
 # --------------------------------------------------------------------------- views
-def top_bar() -> None:
-    C.top_bar(TITLE, f"{S.name} · {done_count()} of {len(S.queue)} pairs saved", done_count(), len(S.queue),
-              go, "All pairs")
-
-
 def view_intro() -> None:
     returning = bool(S.status)
-    C.hero("Listening panel", "Welcome back." if returning else "Two voices. Pick the better one.",
-           "Each trial plays the same line read by two text-to-speech systems. Their names are hidden and "
-           "the order is shuffled. Listen to both, pick the better one on each question, and say why.")
-    C.steps("Enter your name and languages", "Play Voice A and Voice B", "Pick the better one and say why")
-    C.section("What you'll be asked")
-    C.guide([(q, h) for _, q, h in QUESTIONS],
-            '<div class="legend"><span>Choose <b>Voice A</b>, <b>Voice B</b> or <b>About the same</b> '
-            'for each question.</span></div>')
-    C.section("About you")
-    C.name_input()
-    C.section("Languages you can judge")
-    chosen = C.language_picker(lambda g: f"{pairs_in(g)} pairs")
-    n = sum(pairs_in(g) for g in chosen)
-    if S.get("intro_error"):
-        st.error(S.intro_error)
-    c1, c2 = st.columns([1.4, 3], vertical_alignment="center")
-    c1.button("Continue listening" if returning else "Start listening", type="primary", on_click=start,
-              width="stretch")
-    c2.caption("Choose at least one language." if not chosen
-               else "No pairs are set up for these languages yet." if not n
-               else f"{n} pairs, about {max(3, round(n * 0.75))} minutes for all of them. Answers save after every "
-                    "pair, so do as many as you can and stop any time.")
+    md(f'<div class="vp-header">{BRAND}<a class="vp-link" href="#how">How it works</a></div>')
+    left, right = st.columns([1.12, 1], gap="large", vertical_alignment="center")
+    with left:
+        md(illustration(mini=True)
+           + f'<h1 class="vp-h1">{"Welcome back." if returning else "Help African voices sound like home."}</h1>'
+           + '<p class="vp-lede">Listen to two AI voices read the same line, then tell us which one sounds right.</p>')
+        with st.container(key="start_card"):
+            S.setdefault("name_input", S.name)
+            st.text_input("Your name", key="name_input", placeholder="e.g. Amina Bello")
+            S.setdefault("langs_pick", [g for g in GROUP_IDS if g in S.langs])
+            st.multiselect("Languages you speak", GROUP_IDS, format_func=C.GROUP_NAME.get, key="langs_pick",
+                           placeholder="Choose languages")
+            chosen = [g for g in GROUP_IDS if g in (S.langs_pick or [])]
+            if chosen:  # keep the native picks valid for the languages still chosen
+                earlier = S.get("native_pick", [g for g in chosen if S.langs.get(g) == "native"])
+                S.native_pick = [g for g in earlier if g in chosen]
+                st.pills("Native speaker of", chosen, format_func=C.GROUP_NAME.get, selection_mode="multi",
+                         key="native_pick", help="Tap each language you grew up speaking.")
+            if S.get("intro_error"):
+                st.error(S.intro_error)
+            st.button("Continue listening  →" if returning else "Start listening  →", type="primary",
+                      on_click=start, width="stretch", key="start_btn")
+            n = sum(pairs_in(g) for g in chosen)
+            md(f'<p class="vp-note">{n} pairs, about {max(3, round(n * 0.75))} minutes. '
+               'Your answers save as you go, so you can stop any time.</p>' if n else
+               '<p class="vp-note">About 45 seconds a pair. Stop any time.</p>')
+    with right:
+        md(illustration())
+    md(KENTE + '<div id="how" class="vp-steps">'
+       '<div class="vp-step"><span class="n">1</span><div><b>Choose your languages</b><span>Only the ones you speak well.</span></div></div>'
+       '<div class="vp-step"><span class="n">2</span><div><b>Listen to two voices</b><span>Their names stay hidden.</span></div></div>'
+       '<div class="vp-step"><span class="n">3</span><div><b>Pick the better one</b><span>And tell us why in a sentence.</span></div></div>'
+       '</div>' + FOOTER)
     C.store_notice(get_store())
 
 
 def view_pair() -> None:
-    top_bar()
     pid = S.current
+    app_header(pid)
     p = all_pairs()[pid]
     r = C.BY_ID[p["round"]]
     a, b = sides(p)
-    pos = S.queue.index(pid) + 1 if pid in S.queue else 0
-    C.script_block(r, f"Pair {pos} of {len(S.queue)} · {C.GROUP_NAME[r['group']]}",
-                   [("Voices", "Female" if r["gender"] == "female" else "Male"), ("Style", r["style"])])
+    gender = "Female" if r["gender"] == "female" else "Male"
+    note = f'<em>{esc(r["note"])}</em>' if r.get("note") else ""
+    md(f'<div class="vp-crumb">{esc(r["title"])} · {gender} voices</div>'
+       '<h2 class="vp-h2">Which voice sounds more like home?</h2>'
+       f'<div class="vp-script"><small>BOTH VOICES READ</small><p lang="{LANG_TAG[r["group"]]}">{esc(r["text"])}</p>{note}</div>')
+
+    cols = st.columns(2, gap="medium")
+    for col, letter, cid in ((cols[0], "A", a), (cols[1], "B", b)):
+        with col.container(key=f"voice_{letter}"):
+            md(f'<div class="vp-voice"><span class="ab">{letter}</span>'
+               f'<div><b>Voice {letter}</b><span>Play it, then compare</span></div></div>')
+            st.audio(str(C.AUDIO / f"{cid}.mp3"), format="audio/mpeg")
 
     saved = S.saved.get(pid, {})
     for crit, _, _ in QUESTIONS:  # prefill a revisited pair; widget state is dropped once a pair is left
@@ -252,62 +358,65 @@ def view_pair() -> None:
         S[f"{pid}|note"] = saved["note"]
 
     with st.form(f"form_{pid}", border=False):
-        cols = st.columns(2)
-        for col, letter, cid in ((cols[0], "A", a), (cols[1], "B", b)):
-            with col.container(key=f"voice_{letter}"):
-                C.voice_header(letter)
-                st.audio(str(C.AUDIO / f"{cid}.mp3"), format="audio/mpeg")
         with st.container(key="judge"):
-            st.markdown('<p class="judge-title">Which voice is better?</p>', unsafe_allow_html=True)
+            md('<div class="vp-judge-head"><b>Which voice is better?</b>'
+               '<span>Choose Voice A, Voice B or About the same for each.</span></div>')
             for crit, question, help_ in QUESTIONS:
-                st.radio(question, CHOICES, format_func=CHOICE_LABEL.get, index=None, horizontal=True,
-                         key=f"{pid}|{crit}", help=help_)
-            st.text_area("Why?", key=f"{pid}|note", height=90,
-                         placeholder="What made the better voice better, or what went wrong in the other? "
-                                     "Wrong tones, mispronounced names, robotic rhythm, glitches…")
+                qc, oc = st.columns([1, 1.15], vertical_alignment="center")
+                qc.markdown(f'<div class="vp-q"><b>{esc(question)}</b><span>{esc(help_)}</span></div>',
+                            unsafe_allow_html=True)
+                oc.radio(question, CHOICES, format_func=CHOICE_LABEL.get, index=None, horizontal=True,
+                         key=f"{pid}|{crit}", label_visibility="collapsed", width="stretch")
+            md('<div class="vp-why"><b>Why?</b><span>What made the better voice better, or what went wrong in the other?</span></div>')
+            st.text_area("Why?", key=f"{pid}|note", height=100, label_visibility="collapsed",
+                         placeholder="Wrong tones, mispronounced names, robotic rhythm, glitches…")
         if S.get("pair_error"):
             st.error(S.pair_error)
-        c1, c2 = st.columns([2.2, 1])
-        c1.form_submit_button("Save and next", type="primary", on_click=submit, args=(pid, False), width="stretch")
-        c2.form_submit_button("Skip pair", on_click=submit, args=(pid, True), width="stretch")
+        c1, c2, c3 = st.columns([1.5, 0.9, 1.3], vertical_alignment="center")
+        c1.markdown(f'<div class="vp-saved">{CHECK}Your answers save automatically</div>', unsafe_allow_html=True)
+        with c2.container(key="skip_wrap"):
+            st.form_submit_button("Skip this pair", on_click=submit, args=(pid, True), width="stretch")
+        c3.form_submit_button("Save and continue  →", type="primary", on_click=submit, args=(pid, False),
+                              width="stretch")
+    md(FOOTER)
     C.store_notice(get_store())
 
 
 def view_list() -> None:
-    top_bar()
-    st.markdown('<h2 class="round-title" style="margin-top:0.8rem">Your pairs</h2>', unsafe_allow_html=True)
-    st.caption(f"{done_count()} of {len(S.queue)} pairs saved. Open any pair to listen again or change your answer.")
-    nxt = next_open()
-    if nxt:
-        st.button("Continue with the next pair", type="primary", on_click=go, args=("pair", nxt))
-    for g, label, _ in C.GROUPS:
-        ids = [pid for pid in S.queue if C.BY_ID[all_pairs()[pid]["round"]]["group"] == g]
+    app_header()
+    md(f'<h2 class="vp-h2" style="margin-top:1rem !important">Your pairs</h2>'
+       f'<p class="vp-lede" style="font-size:17px">{done_count()} of {len(S.queue)} pairs answered. '
+       'Open any pair to listen again or change your answer.</p>')
+    for g in GROUP_IDS:
+        ids = [pid for pid in S.queue if group_of(pid) == g]
         if not ids:
             continue
-        C.section(f"{label} · {'native' if S.langs.get(g) == 'native' else 'speaker'}")
-        for pid in ids:
+        md(f'<div class="vp-section">{esc(C.GROUP_NAME[g])} · {"native" if S.langs.get(g) == "native" else "speaker"}</div>')
+        for n, pid in enumerate(ids, 1):
             r = C.BY_ID[all_pairs()[pid]["round"]]
             state = S.status.get(pid)
             c1, c2, c3 = st.columns([4, 1.2, 1.2], vertical_alignment="center")
-            c1.markdown(f'<div class="round-row-name">Pair {S.queue.index(pid) + 1} · {C.esc(r["title"])}<small>'
+            c1.markdown(f'<div class="vp-row">Pair {n} · {esc(r["title"])}<small>'
                         f'{"Female" if r["gender"] == "female" else "Male"} voices</small></div>',
                         unsafe_allow_html=True)
             c2.markdown(C.pill(state, "Answered"), unsafe_allow_html=True)
             c3.button("Change" if state else "Open", key=f"open_{pid}", on_click=go, args=("pair", pid),
                       width="stretch")
+    md(FOOTER)
 
 
 def view_done() -> None:
-    top_bar()
+    app_header()
     answered = sum(1 for pid in S.queue if S.status.get(pid) == "rated")
     skipped = sum(1 for pid in S.queue if S.status.get(pid) == "skipped")
-    C.hero("All done", "Thank you. Every pair is saved.",
-           f"You answered {answered} pair{'s' if answered != 1 else ''}"
-           f"{f' and skipped {skipped}' if skipped else ''}. You can go back and change any answer.",
-           style="margin-top:1rem")
-    c1, c2, _ = st.columns([1.4, 1.6, 2])
+    md('<div class="vp-done"><h2>Thank you. Every pair is saved.</h2>'
+       f'<p>You answered {answered} pair{"s" if answered != 1 else ""}'
+       f'{f" and skipped {skipped}" if skipped else ""}. You can go back and change any answer, '
+       'or add another language.</p></div>')
+    c1, c2, _ = st.columns([1.3, 1.5, 2])
     c1.button("Review your answers", on_click=go, args=("list",), width="stretch")
     c2.button("Add another language", on_click=go, args=("intro",), width="stretch")
+    md(FOOTER)
 
 
 def main() -> None:

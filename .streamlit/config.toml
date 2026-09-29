@@ -1,12 +1,11 @@
 [theme]
-# Same warm paper + ink as the side-by-side CosyVoice evaluation app (all-lab-stream-tts).
-# Deliberately not red: no colour may draw attention to one voice.
+# Voice Pairs: cotton, indigo (adire), gold, clay. Voice A and Voice B are always styled alike.
 base = "light"
-primaryColor = "#1a4a72"
-backgroundColor = "#f2eee6"
-secondaryBackgroundColor = "#fffdf8"
-textColor = "#1b1914"
-font = "sans serif"
+primaryColor = "#1B2A5C"
+backgroundColor = "#F6F1E7"
+secondaryBackgroundColor = "#FFFCF6"
+textColor = "#1D1B19"
+font = "Figtree:https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap"
 
 [client]
 toolbarMode = "minimal"
