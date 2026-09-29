@@ -40,9 +40,19 @@ LANG_TAG = {"english": "en", "hausa": "ha", "igbo": "ig", "yoruba": "yo", "twi":
 S = C.S
 esc = html.escape
 
-LOGO = '<span class="vp-logo" aria-hidden="true"><i></i><i></i></span>'
-BRAND = f'<a class="vp-brand" href="#top">{LOGO}<b>Voice Pairs</b></a>'
-KENTE = '<div class="vp-kente" aria-hidden="true"></div>'
+# The watercolour's rough edge; every view draws it once, next to the brand.
+DEFS = ('<svg class="vp-defs" width="0" height="0" aria-hidden="true"><filter id="wc-rough" x="-10%" y="-10%" '
+        'width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency="0.007 0.011" numOctaves="3" '
+        'seed="7" result="n"></feTurbulence><feDisplacementMap in="SourceGraphic" in2="n" scale="140" '
+        'xChannelSelector="R" yChannelSelector="G"></feDisplacementMap><feGaussianBlur stdDeviation="1.5">'
+        '</feGaussianBlur></filter></svg>')
+LOGO = ('<span class="vp-logo" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" '
+        'stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">'
+        '<path d="M7 4H4v16h3M17 4h3v16h-3M10 9v6M14 7v10"></path></svg></span>')
+BRAND = (f'{DEFS}<a class="vp-brand" href="#top">{LOGO}<span class="vp-name"><b>Voice Pairs</b>'
+         '<small>by African Languages Lab</small></span></a>')
+RULE = '<div class="vp-rule" aria-hidden="true"></div>'
+WASH = '<div class="wc-wash"></div><div class="wc-grain"></div>'
 FOOTER = ('<div class="vp-footer"><span>A listening panel by the African Languages Lab</span>'
           '<span>We keep only your name and your answers.</span></div>')
 CHECK = ('<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" '
@@ -246,10 +256,12 @@ def md(markup: str) -> None:
 
 
 def illustration(mini: bool = False) -> str:
-    heights = (12, 26, 40, 20, 32) if mini else (18, 40, 64, 32, 52, 22)
+    heights = (12, 26, 40, 20, 32) if mini else (20, 44, 70, 34, 56, 24)
     bars = "".join(f'<i style="height:{h}px"></i>' for h in heights)
-    return (f'<div class="vp-illus{" vp-mini" if mini else ""}" aria-hidden="true">'
-            f'<div class="ab">A</div><div class="bars">{bars}</div><div class="ab">B</div></div>')
+    cap = "" if mini else '<span class="cap">Two voices. One line. You choose.</span>'
+    return (f'<div class="vp-illus wc{" vp-mini" if mini else ""}" aria-hidden="true">{WASH}<div class="wc-fleck"></div>'
+            f'<div class="vp-illus-in"><div class="pair"><div class="ab">A</div><div class="bars">{bars}</div>'
+            f'<div class="ab">B</div></div>{cap}</div></div>')
 
 
 def initials(name: str) -> str:
@@ -295,7 +307,7 @@ def app_header(pid: str | None = None) -> None:
         else:
             b1.button("Your pairs", on_click=go, args=("list",), width="stretch")
         b2.markdown(me_html(), unsafe_allow_html=True)
-    md(KENTE)
+    md(RULE)
 
 
 # --------------------------------------------------------------------------- views
@@ -329,7 +341,7 @@ def view_intro() -> None:
                '<p class="vp-note">About 45 seconds a pair. Stop any time.</p>')
     with right:
         md(illustration())
-    md(KENTE + '<div id="how" class="vp-steps">'
+    md(RULE + '<div id="how" class="vp-steps">'
        '<div class="vp-step"><span class="n">1</span><div><b>Choose your languages</b><span>Only the ones you speak well.</span></div></div>'
        '<div class="vp-step"><span class="n">2</span><div><b>Listen to two voices</b><span>Their names stay hidden.</span></div></div>'
        '<div class="vp-step"><span class="n">3</span><div><b>Pick the better one</b><span>And tell us why in a sentence.</span></div></div>'
@@ -347,7 +359,7 @@ def view_pair() -> None:
     note = f'<em>{esc(r["note"])}</em>' if r.get("note") else ""
     md(f'<div class="vp-crumb">{esc(pair_title(p))} · {gender} voices</div>'
        '<h2 class="vp-h2">Which voice sounds more like home?</h2>'
-       f'<div class="vp-script"><small>BOTH VOICES READ</small><p lang="{LANG_TAG[r["group"]]}">{esc(r["text"])}</p>{note}</div>')
+       f'<div class="vp-script"><div class="vp-script-art wc" aria-hidden="true">{WASH}</div><small>BOTH VOICES READ</small><p lang="{LANG_TAG[r["group"]]}">{esc(r["text"])}</p>{note}</div>')
 
     cols = st.columns(2, gap="medium")
     for col, letter, cid in ((cols[0], "A", a), (cols[1], "B", b)):

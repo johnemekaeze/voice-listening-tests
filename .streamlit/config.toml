@@ -1,11 +1,11 @@
 [theme]
-# Voice Pairs: cotton, indigo (adire), gold, clay. Voice A and Voice B are always styled alike.
+# Voice Pairs in the Mansa look: warm paper, espresso, maroon and sand. Voice A and Voice B are always styled alike.
 base = "light"
-primaryColor = "#1B2A5C"
-backgroundColor = "#F6F1E7"
-secondaryBackgroundColor = "#FFFCF6"
-textColor = "#1D1B19"
-font = "Figtree:https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap"
+primaryColor = "#1A0D08"
+backgroundColor = "#F9F7F2"
+secondaryBackgroundColor = "#FFFFFF"
+textColor = "#1A1A1A"
+font = "Sora:https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap"
 
 [client]
 toolbarMode = "minimal"
