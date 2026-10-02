@@ -14,7 +14,11 @@ early.
 """
 from __future__ import annotations
 
+import csv
+import hashlib
 import html
+import json
+import os
 from collections import Counter
 from datetime import datetime, timezone
 
@@ -60,9 +64,46 @@ CHECK = ('<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="cu
 
 
 # --------------------------------------------------------------------------- data
+LOCAL_CSV = C.HERE / "data" / "pairwise_local.csv"  # where answers go when no sheet is configured
+
+
 @st.cache_resource(show_spinner=False)
 def get_store():
-    return store.open_store(store.PAIRS_SHEET, store.PAIR_COLUMNS, "pairwise_local.csv")
+    s = store.open_store(store.PAIRS_SHEET, store.PAIR_COLUMNS, "pairwise_local.csv")
+    if isinstance(s, store.DriveSheetStore) and LOCAL_CSV.exists():
+        # Answers saved while the sheet secrets were missing: copy them in (upsert by row_key, so
+        # repeating this is harmless), then keep the file under a new name rather than delete it.
+        with open(LOCAL_CSV, encoding="utf-8", newline="") as f:
+            rows = [r for r in csv.DictReader(f) if r.get("row_key")]
+        if rows:
+            s.upsert(rows)
+        LOCAL_CSV.rename(LOCAL_CSV.with_name(f"pairwise_local.migrated-{int(datetime.now().timestamp())}.csv"))
+    return s
+
+
+def export_token() -> str:
+    """Owner-only link token, derived from the private answer key so the public repo can't reveal it."""
+    key = clip_key()
+    blob = json.dumps(sorted([cid, v["system"], v["voice"]] for cid, v in key.items()))
+    return hashlib.sha256(("export|" + blob).encode()).hexdigest()[:24]
+
+
+def owner_export() -> bool:
+    """?export=<token>: show where answers are going and any answers held in the local file."""
+    token = st.query_params.get("export")
+    if not token or not clip_key() or token != export_token():
+        return False
+    s = get_store()
+    st.markdown(f"**Answer store:** {s.label}" + (f" `…{s.file_id[-6:]}`" if hasattr(s, "file_id") else ""))
+    files = sorted(LOCAL_CSV.parent.glob("pairwise_local*.csv"))
+    if not files:
+        st.markdown("No local answer files on this server.")
+    for path in files:
+        text = path.read_text(encoding="utf-8")
+        st.markdown(f"**{path.name}**: {max(text.count(chr(10)) - 1, 0)} rows")
+        st.code(text, language=None)
+        st.download_button(f"Download {path.name}", text, file_name=path.name, mime="text/csv", key=path.name)
+    return True
 
 
 @st.cache_data(ttl=900, show_spinner=False)
@@ -440,6 +481,12 @@ def main() -> None:
         get_store()
     except Exception as exc:
         st.error(f"The answer sheet can't be opened, so nothing would be saved. Tell the organiser. ({exc})")
+        st.stop()
+    if owner_export():
+        st.stop()
+    if isinstance(get_store(), store.LocalStore) and not os.environ.get("BAKEOFF_ALLOW_LOCAL"):
+        # Without the sheet secrets, answers would land in a server file that a restart wipes.
+        st.error("The answer sheet isn't connected yet, so answers can't be saved. Please tell the organiser.")
         st.stop()
     if S.view != "intro" and not S.queue:
         S.view = "intro"
