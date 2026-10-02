@@ -482,6 +482,8 @@ def main() -> None:
     except Exception as exc:
         st.error(f"The answer sheet can't be opened, so nothing would be saved. Tell the organiser. ({exc})")
         st.stop()
+    if isinstance(get_store(), store.LocalStore) and store.secret(store.PAIRS_SHEET) and store.secret("GOOGLE_SERVICE_ACCOUNT"):
+        get_store.clear()  # the sheet secrets were added after the local store was cached: switch now
     if owner_export():
         st.stop()
     if isinstance(get_store(), store.LocalStore) and not os.environ.get("BAKEOFF_ALLOW_LOCAL"):
