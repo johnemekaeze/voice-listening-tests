@@ -192,6 +192,7 @@ section[data-testid="stSidebar"], [data-testid="stSidebarCollapsedControl"], [da
 .vp-q span { font-size: 14px; color: var(--muted); }
 .vp-why { border-top: 1px solid var(--line); padding: 16px 0 calc(1rem + 10px); }
 .vp-why b { display: block; font-size: 17px; font-weight: 600; }
+.vp-why b em { font-style: normal; font-size: 13px; font-weight: 500; color: var(--faint); margin-left: 6px; }
 .vp-why span { font-size: 14px; color: var(--muted); }
 
 /* A / About the same / B as one segmented pill */

@@ -2,7 +2,7 @@
 
 Each trial is one script read by a Mansa voice and by one other system's voice from the same
 round (same language, variant and voice gender) and, in call-centre English, the same accent. Listeners hear Voice A and Voice B and pick the
-better one on naturalness, intelligibility, pronunciation and overall, then say why.
+better one on naturalness, intelligibility, pronunciation and overall, and can say why (optional).
 
 Blindness: pairs are built here on the server from the private clip key, so the browser only
 ever gets two anonymous audio files. Which side Mansa is on is randomised per listener and pair,
@@ -34,7 +34,6 @@ QUESTIONS = [
      "Words, tones, names and numbers said correctly for this language or accent."),
     ("overall", "Overall, which is better?", "The one you would rather use."),
 ]
-MIN_REASON = 8
 GROUP_IDS = [g for g, _, _ in C.GROUPS]
 LANG_TAG = {"english": "en", "hausa": "ha", "igbo": "ig", "yoruba": "yo", "twi": "ak", "ewe": "ee", "swahili": "sw"}
 S = C.S
@@ -204,12 +203,8 @@ def submit(pid: str, skip: bool) -> None:
     p = all_pairs()[pid]
     if not skip:
         missing = [q for crit, q, _ in QUESTIONS if S.get(f"{pid}|{crit}") is None]
-        note = (S.get(f"{pid}|note") or "").strip()
         if missing:
             S.pair_error = "Still to answer: " + "; ".join(missing)
-            return
-        if len(note) < MIN_REASON:
-            S.pair_error = "Say briefly why: what made the better voice better, or what went wrong in the other."
             return
     a, b = sides(p)
     mansa_side = "A" if a == p["mansa"] else "B"
@@ -344,7 +339,7 @@ def view_intro() -> None:
     md(RULE + '<div id="how" class="vp-steps">'
        '<div class="vp-step"><span class="n">1</span><div><b>Choose your languages</b><span>Only the ones you speak well.</span></div></div>'
        '<div class="vp-step"><span class="n">2</span><div><b>Listen to two voices</b><span>Their names stay hidden.</span></div></div>'
-       '<div class="vp-step"><span class="n">3</span><div><b>Pick the better one</b><span>And tell us why in a sentence.</span></div></div>'
+       '<div class="vp-step"><span class="n">3</span><div><b>Pick the better one</b><span>Add why, if you like.</span></div></div>'
        '</div>' + FOOTER)
     C.store_notice(get_store())
 
@@ -385,7 +380,7 @@ def view_pair() -> None:
                             unsafe_allow_html=True)
                 oc.radio(question, CHOICES, format_func=CHOICE_LABEL.get, index=None, horizontal=True,
                          key=f"{pid}|{crit}", label_visibility="collapsed", width="stretch")
-            md('<div class="vp-why"><b>Why?</b><span>What made the better voice better, or what went wrong in the other?</span></div>')
+            md('<div class="vp-why"><b>Why? <em>Optional</em></b><span>What made the better voice better, or what went wrong in the other?</span></div>')
             st.text_area("Why?", key=f"{pid}|note", height=100, label_visibility="collapsed",
                          placeholder="Wrong tones, mispronounced names, robotic rhythm, glitches…")
         if S.get("pair_error"):
